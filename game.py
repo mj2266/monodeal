@@ -7,15 +7,15 @@ Form, Base = uic.loadUiType(os.path.join(current_dir, "game.ui"))
 
 
 color_to_rgb = {
-    "sky_blue": (0, 191, 255),
-    "red": (255, 0, 0),
-    "blue": (0, 0, 102),
-    "green": (0, 204, 0),
-    "yellow": (255, 255, 0),
-    "pink": (255, 0, 102),
-    "utility": (204, 255, 153),
-    "black": (255,255,255),
-    "orange": (255, 102, 0),
+    "sky_blue": "rgb(0, 191, 255)",
+    "red": "rgb(255, 0, 0)",
+    "blue": "rgb(0, 0, 102)",
+    "green": "rgb(0, 204, 0)",
+    "yellow": "rgb(255, 255, 0)",
+    "pink": "rgb(255, 0, 102)",
+    "utility": "rgb(204, 255, 153)",
+    "black": "rgb(255,255,255)",
+    "orange": "rgb(255, 102, 0)",
 }
 
 
@@ -25,10 +25,17 @@ class gameWindow(Base, Form):
         self.setupUi(self)
 
         self.p1Property.clicked.connect(self.showCard)
+        self.p1Property.setStyleSheet("background-color:"+color_to_rgb["pink"])
+
+        self.button = QtWidgets.QPushButton("Bangladesh",self.frame)
+        self.button2 = QtWidgets.QPushButton("Pakistan",self.frame)
+        self.button.setGeometry( 0,0,100,40)
+        self.button2.setGeometry( 150,0,100,40)
 
     def showCard(self):
         self.cardPage = cardListWindow(parent= None, msg= "player X")
         self.cardPage.show()
+
 
     #     self.pushButton.installEventFilter(self)
     #     self.pushButton_2.installEventFilter(self)
