@@ -12,10 +12,16 @@ class startingWindow(Base, Form):
         self.setupUi(self)
         self.enterButton.clicked.connect(self.onclick)
 
+        # pressing enter button means clicking enter button
+        self.playerName.returnPressed.connect(self.enterButton.click)
+
     def showGameWindow(self, playername=""):
         print(playername)
         self.game = gameWindow(parent=None)
         self.game.show()
+
+        #close current window
+        self.close()
 
     def onclick(self):
         print("button is clicked")

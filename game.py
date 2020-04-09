@@ -25,12 +25,15 @@ class gameWindow(Base, Form):
         self.setupUi(self)
 
         self.p1Property.clicked.connect(self.showCard)
-        self.p1Property.setStyleSheet("background-color:"+color_to_rgb["pink"])
 
         self.button = QtWidgets.QPushButton("Bangladesh",self.frame)
         self.button2 = QtWidgets.QPushButton("Pakistan",self.frame)
         self.button.setGeometry( 0,0,100,40)
         self.button2.setGeometry( 150,0,100,40)
+
+        self.button.setStyleSheet("background-color:"+color_to_rgb["pink"])
+        self.button2.setStyleSheet("background-color:"+color_to_rgb["green"])
+
 
     def showCard(self):
         self.cardPage = cardListWindow(parent= None, msg= "player X")
