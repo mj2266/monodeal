@@ -2,6 +2,14 @@ import socket
 import select
 from _thread import *
 import threading
+from Card import Card
+
+c1 = Card("Pakistan", "4", "green", "property")
+c2 = Card("Bangladesh", "2", "yellow", "property")
+c3 = Card("Iran", "5", "pink", "property")
+c4 = Card("Money", "5", "orange", "money")
+
+maxPlayer = 4
 
 HEADER_LENGTH = 10
 
